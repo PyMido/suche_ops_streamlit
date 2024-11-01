@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-
 def lade_excel_datei(pfad):
     """
     Lädt die Excel-Datei und gibt den DataFrame zurück.
@@ -15,7 +14,6 @@ def lade_excel_datei(pfad):
     except Exception as e:
         st.error(f"Ein Fehler ist aufgetreten: {e}")
         return None
-
 
 def suche_daten(df, suchbegriff):
     """
@@ -34,12 +32,11 @@ def suche_daten(df, suchbegriff):
     ergebnisse = df[mask]
     return ergebnisse
 
-
 def main():
     st.title("OPS-Text und Handelsnamen Suche")
 
-    # Fester Pfad zur Excel-Datei
-    excel_pfad = r"C:\Users\hamad\OneDrive\Desktop\ZE Liste.xlsx"
+    # Angepasster Pfad zur Excel-Datei im Hauptverzeichnis
+    excel_pfad = "ZE Liste.xlsx"
 
     st.sidebar.header("Daten laden")
     st.sidebar.write(f"**Aktueller Excel-Pfad:** {excel_pfad}")
@@ -87,7 +84,6 @@ def main():
                     st.info("Keine passenden Einträge gefunden.")
     else:
         st.error("Die Excel-Datei konnte nicht geladen werden. Bitte überprüfen Sie den Pfad und die Datei.")
-
 
 if __name__ == "__main__":
     main()
